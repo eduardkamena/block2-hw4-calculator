@@ -5,10 +5,6 @@ import org.springframework.stereotype.Service;
 @Service // Сервисная часть
 public class CalculatorServiceImpl implements CalculatorService {
 
-    public String calculatorHello() { // Метод приветствия
-        return "Добро пожаловать в калькулятор";
-    }
-
     public float plus(float numberOne, float numberTwo) { // Метод сложения
         return numberOne + numberTwo;
     }

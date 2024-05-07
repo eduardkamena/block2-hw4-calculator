@@ -18,7 +18,7 @@ public class CalculatorController {
 
     @GetMapping
     public String calculatorHello() {
-        return calculatorService.calculatorHello();
+        return "Добро пожаловать в калькулятор!";
     }
 
     @GetMapping(path = "/plus")
@@ -41,9 +41,12 @@ public class CalculatorController {
 
     @GetMapping(path = "/divide")
     public String divide(@RequestParam("num1") float numberOne, @RequestParam("num2") float numberTwo) {
-        if (numberTwo == 0) return "На ноль делить нельзя";
-        else return String.format("%.0f", numberOne) + " / " + String.format("%.0f", numberTwo) + " = "
-                + calculatorService.divide(numberOne, numberTwo);
+        if (numberTwo == 0) {
+            return "На ноль делить нельзя";
+        } else {
+            return String.format("%.0f", numberOne) + " / " + String.format("%.0f", numberTwo) + " = "
+                    + calculatorService.divide(numberOne, numberTwo);
+        }
     }
 
 }
